@@ -1,0 +1,27 @@
+{
+    "name": "jamescowie/magento-rewrites",
+    "description": "Inspection for modules rewrites",
+    "type": "library",
+    "license": "MIT",
+    "keywords": ["magento", "rewrites"],    
+    "require-dev": {
+        "phpspec/phpspec": "~2.0",
+        "behat/behat": "~3.0",
+        "bossa/phpspec2-expect": "*"
+    },
+    "authors": [
+        {
+            "name": "James Cowie",
+            "email": "james@jcowie.co.uk",
+            "homepage": "http://jcowie.co.uk"
+        }
+    ],
+    "autoload": {
+        "psr-0": {
+            "MagentoRewrites": "src/"
+        }
+    },
+    "config": {
+        "bin-dir": "bin"
+    }
+}
