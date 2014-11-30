@@ -54,4 +54,13 @@ class FeatureContext implements Context, SnippetAcceptingContext
     {
         expect(count($this->output))->toBe(0);
     }
+
+    /**
+     * @Then I should see both :controller and :model errors
+     */
+    public function iShouldSeeBothAndErrors()
+    {
+        expect(array_key_exists('controller', $this->output))->toBe(true);
+        expect(array_key_exists('other', $this->output))->toBe(true);
+    }
 }

@@ -38,9 +38,18 @@ class Inspect
     {
         $conf = new \SimpleXMLElement($file);
         $xpath = '/config/*[name()="frontend" or name()="admin"]/routers/*/args/modules/*[@before]';
-        foreach ($conf->xpath($xpath) as $rewrite) {
-            var_dump($rewrite);
+
+        $matches = $conf->xpath('/config/*[name()="frontend" or name()="admin"]/routers/*/args/modules/*[@before]');
+
+        if ($matches) {
+            foreach($this->xml2array($matches) as $key => $value) {
+                foreach($value as $rewrite => $class) {
+                    $this->output['controller'] = ['class' => $class, 'rewrite' => $rewrite];
+                }
+            }
         }
+
+        return $this->output;
     }
 
     private function xml2array($xml)

@@ -13,6 +13,11 @@ Feature: Rewrites are returned
         When I run an inspection
         Then I should see be warned that there are rewrites
 
+    Scenario: Modules config contains both model and controller rewrites
+        Given I have a magento config file with "Both" rewrites
+        When I run an inspection
+        Then I should see both "Controller" and "Other" errors
+
     Scenario: No rewrites are detected
         Given I have a magento config file with "No" rewrites
         When I run an inspection

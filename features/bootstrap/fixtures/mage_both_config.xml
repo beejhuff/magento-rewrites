@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <modules>
+        <Hackathon_SimpleImageHelper>
+            <version>1.1.0</version>
+        </Hackathon_SimpleImageHelper>
+    </modules>
+    <global>
+        <helpers>
+            <catalog>
+                <rewrite>
+                    <image>Hackathon_SimpleImageHelper_Helper_Image</image>
+                </rewrite>
+            </catalog>
+        </helpers>
+    </global>
+    <frontend>
+        <routers>
+            <tag>
+                <args>
+                    <modules>
+                        <inchoo_tag before="Mage_Tag">Inchoo_Tag</inchoo_tag>
+                    </modules>
+                </args>
+            </tag>
+        </routers>
+    </frontend>
+</config>
